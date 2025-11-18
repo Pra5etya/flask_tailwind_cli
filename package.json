@@ -1,0 +1,23 @@
+{
+  "name": "flask_tailwind_cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev:css": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/style.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/style.css --minify",
+
+    "flask": "py run.py",
+
+    "start": "concurrently \"npm run dev:css\" \"npm run flask\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.1.17"
+  }
+}

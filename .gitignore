@@ -1,0 +1,12 @@
+# Project Env
+win_env
+node_modules
+
+# Cache
+**__pycache__
+
+# Logs
+logs
+
+# Static Version
+**.well-known
