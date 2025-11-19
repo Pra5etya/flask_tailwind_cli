@@ -1,0 +1,32 @@
+{
+  "name": "Siklus Data",
+  "short_name": "SiklusData",
+  "description": "Platform Edutech modern untuk pembelajaran Data, AI, dan Automation.",
+  "icons": [
+    {
+      "src": "/static/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1a73e8",
+  "id": "/",
+  "lang": "id",
+  "dir": "ltr"
+}

@@ -1,0 +1,33 @@
+{% extends "component/base.html" %}
+
+{% block title %}403 Forbidden{% endblock %}
+
+{% block content %}
+<div class="relative flex items-center justify-center min-h-screen bg-gray-900 text-gray-100 overflow-hidden">
+  <!-- Canvas untuk animasi bubble -->
+  <canvas id="bubble-bg" class="absolute inset-0 w-full h-full"></canvas>
+
+  <!-- Konten utama -->
+  <main class="relative z-10 text-center px-6">
+    <div class="mb-6 flex justify-center">
+      <div class="bg-gray-800 p-4 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M5.07 19h13.86a2 2 0 001.74-3l-6.93-12a2 2 0 00-3.48 0l-6.93 12a2 2 0 001.74 3z" />
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="text-4xl font-bold mb-2">403 - Access Denied</h1>
+    <p class="text-gray-400 mb-8">You don't have permission to access this page.</p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ url_for('main.index') }}" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        Go to Homepage
+      </a>
+      <button onclick="history.back()" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-medium transition">
+        Go Back
+      </button>
+    </div>
+  </main>
+</div>
+{% endblock %}

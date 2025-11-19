@@ -1,0 +1,66 @@
+{% extends "component/base.html" %}
+
+{% block title %}Unsupported Browser{% endblock %}
+
+{% block content %}
+<!-- Wrapper agar konten di tengah layar -->
+<div class="flex items-center justify-center min-h-screen">
+  <!-- Tambahkan transform & translate untuk mobile -->
+  <div class="text-center p-6 md:p-10 transform -translate-y-10 md:translate-y-0">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-4">Unsupported browser</h1>
+
+    <p class="text-gray-600 mb-8 text-sm md:text-base">
+      You're using a web browser we don't support yet.<br>
+      Please use one of these options to improve your experience.
+    </p>
+
+    <!-- Desktop Layout -->
+    <div class="hidden md:flex flex-wrap justify-center gap-6">
+
+      <p>sample desktop</p>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-44 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/chrome_2025.webp') }}" alt="Google Chrome" class="w-20 h-20 mb-2">
+        <a href="https://www.google.com/chrome/" class="text-blue-600 font-medium hover:underline">Google Chrome</a>
+        <span class="text-sm text-gray-500">version 102+</span>
+      </div>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-44 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/mozilla_2025.webp') }}" alt="Mozilla Firefox" class="w-20 h-20 mb-2">
+        <a href="https://www.mozilla.org/firefox/" class="text-blue-600 font-medium hover:underline">Mozilla Firefox</a>
+        <span class="text-sm text-gray-500">version 90+</span>
+      </div>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-44 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/opera_2025.webp') }}" alt="Opera Browser" class="w-20 h-20 mb-2">
+        <a href="https://www.opera.com/" class="text-blue-600 font-medium hover:underline">Opera</a>
+        <span class="text-sm text-gray-500">version 90+</span>
+      </div>
+    </div>
+
+    <!-- Mobile Layout -->
+    <div class="flex md:hidden flex-wrap justify-center gap-5">
+
+      <p>sample mobile</p>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-40 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/chrome_2025.webp') }}" alt="Google Chrome" class="w-16 h-16 mb-2">
+        <a href="https://play.google.com/store/apps/details?id=com.android.chrome" class="text-blue-600 font-medium hover:underline text-sm">Chrome (Android)</a>
+        <span class="text-xs text-gray-500">version 102+</span>
+      </div>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-40 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/mozilla_2025.webp') }}" alt="Firefox Mobile" class="w-16 h-16 mb-2">
+        <a href="https://play.google.com/store/apps/details?id=org.mozilla.firefox" class="text-blue-600 font-medium hover:underline text-sm">Firefox (Android)</a>
+        <span class="text-xs text-gray-500">version 90+</span>
+      </div>
+
+      <div class="flex flex-col items-center border border-gray-200 rounded-2xl p-4 w-40 shadow-sm hover:shadow-md transition">
+        <img src="{{ url_for('file.protected_image', filename='unsupport/opera_2025.webp') }}" alt="Opera Browser" class="w-16 h-16 mb-2">
+        <a href="https://www.opera.com/opera/android" class="text-blue-600 font-medium hover:underline">Opera</a>
+        <span class="text-sm text-gray-500">version 90+</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

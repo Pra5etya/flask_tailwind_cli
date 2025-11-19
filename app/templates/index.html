@@ -1,33 +1,14 @@
-<!DOCTYPE html>
+{% extends 'component/base.html' %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flask + Tailwind v4</title>
+{% block title %} Index {% endblock %}
 
-    <!-- Anti-flicker: panggil file JS sebelum <body> -->
-    <script src="{{ url_for('static', filename='js/theme-init.js') }}"></script>
+{% block content %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+<!-- header content -->
+{% include "component/header.html" %}
 
-<body class="bg-white text-black dark:bg-gray-900 dark:text-gray-100 transition-all min-h-screen">
 
-    <div class="p-6">
-        <button 
-            id="themeToggle"
-            class="px-4 py-2 rounded bg-gray-800 text-white dark:bg-gray-200 dark:text-black transition"
-        >
-            Loading...
-        </button>
 
-        <h1 class="text-3xl font-bold mt-6">
-            Hello Tailwind CSS v4 + Flask!
-        </h1>
-    </div>
 
-    <!-- Script utama -->
-    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 
-</body>
-</html>
+{% endblock %}
