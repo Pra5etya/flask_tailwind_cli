@@ -12,28 +12,6 @@
     transform: rotate(0deg) !important;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
-
-  /* Tombol theme toggle stabil */
-  #theme-toggle,
-  #theme-toggle-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-  }
-
-  /* Desktop toggle hanya muncul di md+ */
-  #theme-toggle {
-    display: none;
-  }
-
-  @media (min-width: 768px) {
-    #theme-toggle {
-      display: flex;
-    }
-  }
 </style>
 
 <header class="bg-white shadow-md dark:bg-slate-900 dark:text-slate-100">
@@ -66,8 +44,8 @@
             dark:border-slate-700 dark:text-slate-100">
         </div>
 
-        <button id="theme-toggle"
-          class="hidden md:flex w-8 h-8 items-center justify-center rounded-md
+        <!-- Desktop Theme Toggle -->
+        <button id="theme-toggle" class="hidden md:flex w-8 h-8 items-center justify-center rounded-md
           bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200">
           <span id="theme-icon"></span>
         </button>
@@ -78,12 +56,13 @@
 
       <!-- Mobile Hamburger + Toggle -->
       <div class="flex items-center md:hidden gap-2">
-        <button id="theme-toggle-mobile"
-          class="flex md:hidden w-8 h-8 items-center justify-center rounded-md
+        <!-- Mobile Theme Toggle -->
+        <button id="theme-toggle-mobile" class="flex md:hidden w-8 h-8 items-center justify-center rounded-md
           bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200">
           <span id="theme-icon-mobile"></span>
         </button>
 
+        <!-- Hamburger -->
         <button id="mobile-menu-button" class="relative w-8 h-8 focus:outline-none">
           <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
             duration-300 ease-in-out" style="top: 0.25rem"></span>
@@ -126,7 +105,7 @@
     { name: 'Contact', href: '#' }
   ];
 
-  // Render menus
+  // Render desktop menu
   const desktopMenu = document.getElementById('desktop-menu');
   menuData.forEach(item => {
     const a = document.createElement('a');
@@ -137,6 +116,7 @@
     desktopMenu.appendChild(a);
   });
 
+  // Render mobile menu
   const mobileMenuItems = document.getElementById('mobile-menu-items');
   menuData.forEach(item => {
     const a = document.createElement('a');
@@ -147,7 +127,7 @@
     mobileMenuItems.appendChild(a);
   });
 
-  // Hamburger
+  // Hamburger toggle
   const btn = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
   const spans = btn.querySelectorAll('span');
@@ -197,14 +177,17 @@
   }
 
   function updateThemeIcon(animate = true) {
-  const isDark = document.documentElement.classList.contains('dark');
-  const icon = isDark ? svgMoon : svgSun;
+    const isDark = document.documentElement.classList.contains('dark');
+    const icon = isDark ? svgMoon : svgSun;
 
-  // Selalu update kedua ikon
-  setAnimatedIcon(themeIcon, icon, animate);
-  setAnimatedIcon(themeIconMobile, icon, animate);
-}
-
+    // Update ikon hanya jika tombol terlihat
+    if (themeIcon.offsetParent !== null) {
+      setAnimatedIcon(themeIcon, icon, animate);
+    }
+    if (themeIconMobile.offsetParent !== null) {
+      setAnimatedIcon(themeIconMobile, icon, animate);
+    }
+  }
 
   function toggleTheme() {
     const isDark = document.documentElement.classList.toggle("dark");
@@ -225,6 +208,9 @@
 
   document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
   document.getElementById("theme-toggle-mobile").addEventListener("click", toggleTheme);
+
+  // Sinkronisasi ikon saat resize
+  window.addEventListener('resize', () => updateThemeIcon(false));
 
 })();
 </script>
