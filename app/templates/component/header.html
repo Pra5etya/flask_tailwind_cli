@@ -1,31 +1,75 @@
+<style>
+  .swap-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+    display: block;
+    width: 23px;
+    height: 20px;
+  }
+
+  .swap-animate {
+    opacity: 1 !important;
+    transform: rotate(0deg) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Tombol theme toggle stabil */
+  #theme-toggle,
+  #theme-toggle-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+
+  /* Desktop toggle hanya muncul di md+ */
+  #theme-toggle {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    #theme-toggle {
+      display: flex;
+    }
+  }
+</style>
+
 <header class="bg-white shadow-md dark:bg-slate-900 dark:text-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center gap-2">
-        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9v9a3 3 0 01-3 3H6a3 3 0 01-3-3v-9z"></path>
+        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none"
+          stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 12l9-9 9 9v9a3 3 0 01-3 3H6a3 3 0 01-3-3v-9z"></path>
         </svg>
         <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">MyLogo</a>
       </div>
 
-      <!-- Search Bar + Desktop Toggle -->
+      <!-- Search + Desktop Toggle -->
       <div class="flex-1 flex items-center mx-4 space-x-4">
-        <!-- Search Bar -->
         <div class="relative w-full hidden md:flex">
           <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 dark:text-slate-400">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011.25 3a7.5 7.5 0 005.4 13.65z"></path>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011.25 3a7.5 7.5 0 005.4 13.65z"></path>
             </svg>
           </span>
-          <input type="text" placeholder="Search..." 
-                 class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100">
+          <input type="text" placeholder="Search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none
+            focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800
+            dark:border-slate-700 dark:text-slate-100">
         </div>
 
-        <!-- Desktop Theme Toggle -->
-        <button id="theme-toggle" class="hidden md:flex w-8 h-8 items-center justify-center rounded-md bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200 focus:outline-none">
-          <i data-lucide="moon" id="theme-icon" class="w-5 h-5"></i>
+        <button id="theme-toggle"
+          class="hidden md:flex w-8 h-8 items-center justify-center rounded-md
+          bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200">
+          <span id="theme-icon"></span>
         </button>
       </div>
 
@@ -34,19 +78,21 @@
 
       <!-- Mobile Hamburger + Toggle -->
       <div class="flex items-center md:hidden gap-2">
-        <!-- Mobile Theme Toggle -->
-        <button id="theme-toggle-mobile" class="flex md:hidden w-8 h-8 items-center justify-center rounded-md bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200 focus:outline-none">
-          <i data-lucide="moon" id="theme-icon-mobile" class="w-5 h-5"></i>
+        <button id="theme-toggle-mobile"
+          class="flex md:hidden w-8 h-8 items-center justify-center rounded-md
+          bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-200">
+          <span id="theme-icon-mobile"></span>
         </button>
 
-        <!-- Hamburger -->
         <button id="mobile-menu-button" class="relative w-8 h-8 focus:outline-none">
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition duration-300 ease-in-out" style="top: 0.25rem"></span>
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition duration-300 ease-in-out" style="top: 0.875rem"></span>
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition duration-300 ease-in-out" style="top: 1.5rem"></span>
+          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+            duration-300 ease-in-out" style="top: 0.25rem"></span>
+          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+            duration-300 ease-in-out" style="top: 0.875rem"></span>
+          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+            duration-300 ease-in-out" style="top: 1.5rem"></span>
         </button>
       </div>
-
     </div>
   </div>
 
@@ -54,12 +100,16 @@
   <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
     <div class="mb-2 relative">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 dark:text-slate-400">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011.25 3a7.5 7.5 0 005.4 13.65z"></path>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011.25 3a7.5 7.5 0 005.4 13.65z"></path>
         </svg>
       </span>
-      <input type="text" placeholder="Search..." 
-             class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100">
+      <input type="text" placeholder="Search..."
+        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none
+        focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800
+        dark:border-slate-700 dark:text-slate-100">
     </div>
     <nav id="mobile-menu-items" class="flex flex-col space-y-2"></nav>
   </div>
@@ -67,10 +117,8 @@
 
 <script>
 (function() {
-  // Render ikon Lucide
-  lucide.createIcons();
+  lucide.createIcons({ replace: true });
 
-  // Menu data (lokal scope, aman dari redeclare)
   const menuData = [
     { name: 'Home', href: '#' },
     { name: 'About', href: '#' },
@@ -78,30 +126,32 @@
     { name: 'Contact', href: '#' }
   ];
 
-  // Render desktop menu
+  // Render menus
   const desktopMenu = document.getElementById('desktop-menu');
   menuData.forEach(item => {
     const a = document.createElement('a');
     a.href = item.href;
     a.textContent = item.name;
-    a.className = "text-gray-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400";
+    a.className =
+      "text-gray-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400";
     desktopMenu.appendChild(a);
   });
 
-  // Render mobile menu
   const mobileMenuItems = document.getElementById('mobile-menu-items');
   menuData.forEach(item => {
     const a = document.createElement('a');
     a.href = item.href;
     a.textContent = item.name;
-    a.className = "text-gray-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400";
+    a.className =
+      "text-gray-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400";
     mobileMenuItems.appendChild(a);
   });
 
-  // Hamburger toggle
+  // Hamburger
   const btn = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
   const spans = btn.querySelectorAll('span');
+
   btn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
     spans[0].classList.toggle('rotate-45');
@@ -111,43 +161,70 @@
     spans[2].classList.toggle('-translate-y-3.5');
   });
 
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  /* ================= Theme System ================= */
+  const svgSun = `
+<svg class="swap-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+  stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="10" cy="10" r="3"></circle>
+  <path d="M10 2v2M10 16v2M4.22 4.22l1.42 1.42
+           M14.36 14.36l1.42 1.42M2 10h2M16 10h2
+           M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42"></path>
+</svg>`;
+
+  const svgMoon = `
+<svg class="swap-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+  stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 12.5A9 9 0 0111.5 3
+           7.5 7.5 0 1021 12.5z"></path>
+</svg>`;
+
   const themeIcon = document.getElementById('theme-icon');
   const themeIconMobile = document.getElementById('theme-icon-mobile');
 
-  function updateThemeIcon() {
-    if (document.documentElement.classList.contains('dark')) {
-      themeIcon.setAttribute('data-lucide', 'sun');
-      themeIconMobile.setAttribute('data-lucide', 'sun');
+  function setAnimatedIcon(target, icon, animate = true) {
+    target.innerHTML = icon;
+    if (animate) {
+      void target.offsetWidth;
+      const svg = target.querySelector("svg");
+      if (svg) svg.classList.add("swap-animate");
     } else {
-      themeIcon.setAttribute('data-lucide', 'moon');
-      themeIconMobile.setAttribute('data-lucide', 'moon');
+      const svg = target.querySelector("svg");
+      if (svg) {
+        svg.style.opacity = "1";
+        svg.style.transform = "rotate(0deg)";
+      }
     }
-    lucide.createIcons({ root: document.body });
   }
 
-  // Inisialisasi tema
-  if (localStorage.getItem('theme') === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  updateThemeIcon();
+  function updateThemeIcon(animate = true) {
+  const isDark = document.documentElement.classList.contains('dark');
+  const icon = isDark ? svgMoon : svgSun;
 
-  function toggleTheme(buttonSource = 'unknown') {
-    console.log(`Toggle theme triggered by: ${buttonSource}`);
-    console.log(`Current mode before toggle: ${document.documentElement.classList.contains('dark') ? 'dark' : 'light'}`);
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-    updateThemeIcon();
-    console.log(`Current mode after toggle: ${document.documentElement.classList.contains('dark') ? 'dark' : 'light'}`);
+  // Selalu update kedua ikon
+  setAnimatedIcon(themeIcon, icon, animate);
+  setAnimatedIcon(themeIconMobile, icon, animate);
+}
+
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateThemeIcon(true);
   }
 
-  themeToggle.addEventListener('click', () => toggleTheme('desktop button'));
-  themeToggleMobile.addEventListener('click', () => toggleTheme('mobile button'));
+  // Apply theme from storage / system
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!localStorage.getItem("theme") &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  }
+
+  updateThemeIcon(false);
+
+  document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+  document.getElementById("theme-toggle-mobile").addEventListener("click", toggleTheme);
 
 })();
 </script>
