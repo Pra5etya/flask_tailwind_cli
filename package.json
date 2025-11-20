@@ -1,14 +1,12 @@
 {
   "name": "flask_tailwind_cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r npm install tailwindcss @tailwindcss/cli concurrently\r ```",
   "main": "tailwind.config.js",
   "scripts": {
     "dev:css": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/style.css --watch",
     "build:css": "npx @tailwindcss/cli -i ./app/static/css/input.css -o ./app/static/css/style.css --minify",
-
     "flask": "py run.py",
-
     "start": "concurrently \"npm run dev:css\" \"npm run flask\""
   },
   "keywords": [],
@@ -19,5 +17,13 @@
     "@tailwindcss/cli": "^4.1.17",
     "concurrently": "^9.2.1",
     "tailwindcss": "^4.1.17"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pra5etya/flask_tailwind_cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pra5etya/flask_tailwind_cli/issues"
+  },
+  "homepage": "https://github.com/Pra5etya/flask_tailwind_cli#readme"
 }

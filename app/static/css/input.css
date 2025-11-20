@@ -1,2 +1,5 @@
 /* Tailwind CLI */
 @import "tailwindcss";
+
+/* Custom Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
