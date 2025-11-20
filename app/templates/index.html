@@ -8,7 +8,41 @@
 {% include "component/header.html" %}
 
 
+<div class="flex flex-col sm:flex-row w-full h-full">    
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_1.html' %}
+        {% include 'sections/index/index_pg_2.html' %}
+    </div>
 
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_3.html' %}
+        {% include 'sections/index/index_pg_4.html' %}
+    </div>
+</div>
+
+<div class="flex flex-col w-full h-full">
+    <h1 class="text-2xl font-bold m-4">Another Section</h1>
+
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_1.html' %}
+        {% include 'sections/index/index_pg_2.html' %}
+    </div>
+
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_3.html' %}
+        {% include 'sections/index/index_pg_4.html' %}
+    </div>
+
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_5.html' %}
+        {% include 'sections/index/index_pg_6.html' %}
+    </div>
+
+    <div class="flex flex-row flex-1 h-full">
+        {% include 'sections/index/index_pg_7.html' %}
+        {% include 'sections/index/index_pg_8.html' %}
+    </div>
+</div>    
 
 
 {% endblock %}
