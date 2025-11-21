@@ -1,15 +1,9 @@
 // ===============================
-//  Header Navigation & Theme ES Module (with logs)
+//  Header Navigation & Theme ES Module (with logs) — NO LUCADE
 // ===============================
 
 export function initHeaderMenu() {
     console.log("[HEADER-MENU] Init header menu module...");
-
-    // Lucide icons
-    if (window.lucide) {
-        console.log("[HEADER-MENU] Lucide icons initialized");
-        window.lucide.createIcons({ replace: true });
-    }
 
     // Menu Data
     const menuData = [
@@ -99,7 +93,7 @@ export function initHeaderMenu() {
         }
     });
 
-    // Theme Toggle Logic
+    // Theme Toggle Logic (now using inline SVG, not Lucide)
     const svgSun = `
     <svg class="swap-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
