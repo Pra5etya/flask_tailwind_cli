@@ -1,0 +1,80 @@
+.swap-icon {
+opacity: 0;
+transform: rotate(-90deg);
+display: block;
+width: 23px;
+height: 20px;
+}
+
+.swap-animate {
+opacity: 1 !important;
+transform: rotate(0deg) !important;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Sticky Header dengan border bawah */
+header {
+position: sticky;
+top: 0;
+z-index: 50;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Overlay */
+#mobile-menu-overlay {
+position: fixed; 
+inset: 0;
+background-color: rgba(0,0,0,0.6);
+transition: opacity 0.3s ease;
+z-index: 40;
+}
+#mobile-menu-overlay.hidden {
+opacity: 0;
+pointer-events: none;
+}
+#mobile-menu-overlay.visible {
+opacity: 1;
+pointer-events: auto;
+}
+
+/* Mobile menu fixed & slide-down/up */
+#mobile-menu {
+position: fixed;
+top: 4rem; /* di bawah header (h-16) */
+left: 0;
+right: 0;
+max-height: 0;
+overflow: hidden;
+padding-top: 0;
+padding-bottom: 0;
+transition: max-height 0.3s ease, padding 0.3s ease;
+z-index: 50;
+border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+#mobile-menu.open {
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+
+/* Mobile menu items border width saja, warna ditentukan JS */
+#mobile-menu-items a {
+padding: 0.5rem 0;
+width: 100%;
+display: block;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+}
+
+#mobile-menu-items a:last-child {
+border-bottom: none; /* hapus garis bawah */
+padding-bottom: 0.5rem; /* tetap ada padding bawah */
+outline: none; /* hilangkan focus ring default */
+}
+
+/* Mobile searchbar full width */
+#mobile-menu input[type="text"] {
+width: 100%;
+box-sizing: border-box;
+}
