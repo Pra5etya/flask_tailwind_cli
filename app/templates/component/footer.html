@@ -141,24 +141,3 @@
     System v1.0 | AI Stack Updated Nov 2025
   </div>
 </footer>
-
-<!-- Dropdown Script with Chevron Rotation -->
-<script>
-document.querySelectorAll('.footer-toggle').forEach((toggle) => {
-  toggle.addEventListener('click', () => {
-    if (window.innerWidth >= 640) return; // desktop ignore
-
-    const content = toggle.nextElementSibling;
-    const chevron = toggle.querySelector('.chevron');
-
-    content.classList.toggle('hidden');
-
-    // Rotate chevron
-    if (!content.classList.contains('hidden')) {
-      chevron.classList.add('rotate-180');
-    } else {
-      chevron.classList.remove('rotate-180');
-    }
-  });
-});
-</script>
