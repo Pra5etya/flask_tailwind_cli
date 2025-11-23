@@ -4,18 +4,21 @@
 
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center gap-2">
-        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none"
-          stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3 12l9-9 9 9v9a3 3 0 01-3 3H6a3 3 0 01-3-3v-9z"></path>
-        </svg>
-        <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">MyLogo</a>
+        <img 
+          src="{{ url_for('file.protected_image', filename='logo.png') }}"
+          alt="Siklus Data" 
+          class="h-8 w-auto"
+        />
+        <h2 class="text-xl font-bold text-primary">
+          Siklus <span class="text-[#309E9C]">Data</span>
+        </h2>
       </div>
 
       <!-- Search + Desktop Toggle -->
       <div class="flex-1 flex items-center mx-4 space-x-4">
         <div class="relative w-full hidden md:flex">
-          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 dark:text-slate-400">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 
+            text-black/40 dark:text-white/40">
             <svg class="w-5 h-5" fill="none" stroke="currentColor"
               stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round"
@@ -25,10 +28,12 @@
 
           <!-- DESKTOP INPUT (FIXED PLACEHOLDER) -->
           <input type="text" placeholder="Search..."
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none
-            focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800
-            dark:border-slate-700 dark:text-slate-100
-            placeholder-gray-700 dark:placeholder-slate-300">
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md
+            focus:outline-none focus:ring-2 focus:ring-[#309E9C] focus:border-[#309E9C]
+            bg-white dark:bg-slate-800
+            text-black dark:text-white
+            placeholder:text-black dark:placeholder:text-white
+            dark:border-slate-700">
         </div>
 
         <!-- Desktop Theme Toggle -->
@@ -43,17 +48,18 @@
 
       <!-- Mobile Hamburger + Toggle -->
       <div class="flex items-center md:hidden gap-2">
-        <button id="theme-toggle-mobile" class="flex md:hidden w-8 h-8 items-center justify-center rounded-md
+        <button id="theme-toggle-mobile"
+          class="flex md:hidden w-8 h-8 items-center justify-center rounded-md
           text-gray-700 dark:text-slate-200">
           <span id="theme-icon-mobile"></span>
         </button>
 
         <button id="mobile-menu-button" class="relative w-8 h-8 focus:outline-none">
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+          <span class="block absolute h-0.5 w-8 bg-black dark:bg-white transform transition
             duration-300 ease-in-out" style="top: 0.25rem"></span>
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+          <span class="block absolute h-0.5 w-8 bg-black dark:bg-white transform transition
             duration-300 ease-in-out" style="top: 0.875rem"></span>
-          <span class="block absolute h-0.5 w-8 bg-gray-700 dark:bg-slate-200 transform transition
+          <span class="block absolute h-0.5 w-8 bg-black dark:bg-white transform transition
             duration-300 ease-in-out" style="top: 1.5rem"></span>
         </button>
       </div>
@@ -63,7 +69,8 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="md:hidden px-4 pb-4 z-50">
     <div class="mb-2 relative">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 dark:text-slate-400">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-3 
+        text-black/40 dark:text-white/40">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -73,10 +80,12 @@
 
       <!-- MOBILE INPUT (FIXED PLACEHOLDER) -->
       <input type="text" placeholder="Search..."
-        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none
-        focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800
-        dark:border-slate-700 dark:text-slate-100
-        placeholder-gray-700 dark:placeholder-slate-300">
+        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md
+        focus:outline-none focus:ring-2 focus:ring-[#309E9C] focus:border-[#309E9C]
+        bg-white dark:bg-slate-800
+        text-black dark:text-white 
+        placeholder:text-black dark:placeholder:text-white
+        dark:border-slate-700">
     </div>
 
     <nav id="mobile-menu-items" class="flex flex-col"></nav>

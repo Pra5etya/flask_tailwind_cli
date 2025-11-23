@@ -1,0 +1,164 @@
+<footer class="border-t border-outline/30 bg-surface text-on-surface pt-12 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- 1️⃣ Brand -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img 
+          src="{{ url_for('file.protected_image', filename='logo.png') }}"
+          alt="Siklus Data" 
+          class="h-8 w-auto"
+        />
+        <h2 class="text-xl font-bold text-primary">
+          Siklus <span class="text-[#309E9C]">Data</span>
+        </h2>
+      </div>
+
+      <p class="text-on-surface-variant leading-relaxed mb-4">
+        Empowering learning through data intelligence, AI, and automation.
+      </p>
+
+      <p class="font-medium text-on-surface mb-2">Built with:</p>
+
+      <ul class="space-y-1 text-on-surface-variant">
+        <li class="flex items-center gap-2">
+          <i data-lucide="brain-circuit" class="w-4 h-4 text-[#309E9C]"></i>
+          OpenAI API
+        </li>
+
+        <li class="flex items-center gap-2">
+          <i data-lucide="circuit-board" class="w-4 h-4 text-[#309E9C]"></i>
+          TensorFlow
+        </li>
+
+        <li class="flex items-center gap-2">
+          <i data-lucide="cpu" class="w-4 h-4 text-[#309E9C]"></i>
+          PyTorch
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2️⃣ Resources -->
+    <div>
+      <button class="footer-toggle flex justify-between items-center w-full mb-3 sm:cursor-default">
+        <h3 class="text-primary font-semibold flex items-center gap-2">
+          <i data-lucide="book-open" class="w-5 h-5 text-[#309E9C]"></i>
+          Resources
+        </h3>
+
+        <i data-lucide="chevron-down" class="chevron w-4 h-4 text-on-surface-variant sm:hidden transition-transform duration-300"></i>
+      </button>
+
+      <ul class="footer-content hidden sm:block space-y-2 text-on-surface-variant">
+        <li><a href="#" class="hover:text-primary">Help Center</a></li>
+        <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-primary">API Docs</a></li>
+      </ul>
+    </div>
+
+    <!-- 3️⃣ Newsletter -->
+    <div>
+      <button class="footer-toggle flex justify-between items-center w-full mb-3 sm:cursor-default">
+        <h3 class="text-primary font-semibold flex items-center gap-2">
+          <i data-lucide="mail-open" class="w-5 h-5 text-[#309E9C]"></i>
+          Stay Updated
+        </h3>
+
+        <i data-lucide="chevron-down" class="chevron w-4 h-4 text-on-surface-variant sm:hidden transition-transform duration-300"></i>
+      </button>
+
+      <div class="footer-content hidden sm:block space-y-3">
+        
+        <!-- Input email yang placeholder-nya menyesuaikan tema -->
+        <input 
+          type="email" 
+          placeholder="Enter your email"
+          class="w-full px-3 py-2 rounded-md border border-outline/40 bg-surface text-on-surface
+          placeholder:text-black dark:placeholder:text-white
+          focus:ring-2 focus:ring-[#309E9C] focus:outline-none"
+        >
+
+
+        <!-- Tombol dengan warna logo -->
+        <button class="bg-[#309E9C] text-white py-2 px-4 rounded-md hover:bg-[#277F7D] transition">
+          Subscribe
+        </button>
+
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+          Join 10,000+ learners advancing their careers with AI-powered education.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 4️⃣ Community -->
+    <div>
+      <button class="footer-toggle flex justify-between items-center w-full mb-3 sm:cursor-default">
+        <h3 class="text-primary font-semibold flex items-center gap-2">
+          <i data-lucide="users" class="w-5 h-5 text-[#309E9C]"></i>
+          Community & Contact
+        </h3>
+
+        <i data-lucide="chevron-down" class="chevron w-4 h-4 text-on-surface-variant sm:hidden transition-transform duration-300"></i>
+      </button>
+
+      <ul class="footer-content hidden sm:block space-y-2 text-on-surface-variant">
+        <li><a href="#" class="hover:text-primary">Join Discord</a></li>
+        <li><a href="#" class="hover:text-primary">AI Learners Forum</a></li>
+        <li><a href="#" class="hover:text-primary">Events & Webinars</a></li>
+
+        <li class="flex items-center gap-2 pt-3 mt-3 border-t border-outline/30">
+          <i data-lucide="mail" class="w-4 h-4 text-[#309E9C]"></i>
+          <a href="mailto:contact@siklusdata.com" class="hover:text-primary">
+            contact@siklusdata.com
+          </a>
+        </li>
+
+        <li class="flex items-center gap-2">
+          <i data-lucide="linkedin" class="w-4 h-4 text-[#309E9C]"></i>
+          <a href="#" class="hover:text-primary">LinkedIn</a>
+        </li>
+
+        <li class="flex items-center gap-2">
+          <i data-lucide="github" class="w-4 h-4 text-[#309E9C]"></i>
+          <a href="#" class="hover:text-primary">GitHub</a>
+        </li>
+
+        <li class="flex items-center gap-2">
+          <i data-lucide="twitter" class="w-4 h-4 text-[#309E9C]"></i>
+          <a href="#" class="hover:text-primary">X (Twitter)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="mt-10 text-center text-sm text-on-surface-variant">
+    © 2025 Siklus Data. All rights reserved.  
+    <br class="sm:hidden">
+    System v1.0 | AI Stack Updated Nov 2025
+  </div>
+</footer>
+
+<!-- Dropdown Script with Chevron Rotation -->
+<script>
+document.querySelectorAll('.footer-toggle').forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    if (window.innerWidth >= 640) return; // desktop ignore
+
+    const content = toggle.nextElementSibling;
+    const chevron = toggle.querySelector('.chevron');
+
+    content.classList.toggle('hidden');
+
+    // Rotate chevron
+    if (!content.classList.contains('hidden')) {
+      chevron.classList.add('rotate-180');
+    } else {
+      chevron.classList.remove('rotate-180');
+    }
+  });
+});
+</script>
